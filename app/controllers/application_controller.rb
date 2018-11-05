@@ -29,9 +29,9 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/recipes/:id' do
-  @post = Post.find(params[:id])
-  @post.update(name: params[:name], content: params[:content])
-  @post.save
+  @recipe = Recipe.find(params[:id])
+  @recipe.update(name: params[:name], ingredients: params[:content])
+  @recipe.save
   erb :show
 end
 
